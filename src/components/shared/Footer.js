@@ -1,10 +1,62 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faLinkedin, faWhatsapp, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import Link from 'next/link';
 
 const Footer = () => {
+    const navItems = [
+        {
+            route:'Home',
+            path:'/'
+        },
+        {
+            route:'Pages',
+            path:'/pages'
+        },
+        {
+            route:'About',
+            path:'/about'
+        },
+        {
+            route:'Categories',
+            path:'/categories'
+        },
+        {
+            route:'Contact',
+            path:'/contact'
+        },
+    ]
+    
     return (
-        <div>
-            <h1>Footer components</h1>
-        </div>
+        <div className='p-5 md:p-10 bg-black text-white text-center'>
+           <div className='flex justify-center'>
+             <FontAwesomeIcon className='text-white h-[20px] ms-4' icon={faFacebook} />
+                <FontAwesomeIcon className='text-white h-[20px] ms-4' icon={faYoutube} />
+                <FontAwesomeIcon className='text-white h-[20px] ms-4' icon={faLinkedin} />
+                <FontAwesomeIcon className='text-white h-[20px] ms-4' icon={faXTwitter} />
+                <FontAwesomeIcon className='text-white h-[20px] ms-4' icon={faWhatsapp} />
+           </div>
+            <div className='mt-5'>
+            <ul className="menu menu-horizontal px-1">
+      
+      {
+        navItems.map(item => <li className='text-white uppercase font-semibold' key={item.path}><Link href={item.path}> {item.route}</Link></li>)
+      }
+      
+      <li className='text-white uppercase font-semibold'>
+        <details>
+          <summary>Recent News</summary>
+          <ul className="p-2 text-black">
+            <li><a>News coming one</a></li>
+            <li><a>News coming two</a></li>
+            <li><a>News coming three</a></li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+            </div>
+            <p className='text-neutral-500 text-sm'>@2025 The News Portal. Design by Developer Soumitro Sarker</p>
+           </div>
     );
 };
 
