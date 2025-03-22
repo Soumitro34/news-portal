@@ -21,7 +21,7 @@ const navItems = [
     },
     {
         route:'Categories',
-        path:'/categories'
+        path:'/categories/news?category=all-news'
     },
     {
         route:'Contact',
@@ -78,7 +78,7 @@ const Navbar = () => {
       <li className='text-white uppercase font-semibold'>
         <details>
           <summary>Recent News</summary>
-          <ul className="p-2 text-black">
+          <ul className="p-2 text-black z-20">
             <li><a>News coming one</a></li>
             <li><a>News coming two</a></li>
             <li><a>News coming three</a></li>

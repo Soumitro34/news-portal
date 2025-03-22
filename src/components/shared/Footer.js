@@ -36,8 +36,9 @@ const Footer = () => {
                 <FontAwesomeIcon className='text-white h-[20px] ms-4' icon={faXTwitter} />
                 <FontAwesomeIcon className='text-white h-[20px] ms-4' icon={faWhatsapp} />
            </div>
-            <div className='mt-5'>
-            <ul className="menu menu-horizontal px-1">
+           <div className='flex justify-center mt-5'>
+           <div className='navbar-center px-5 lg:flex flex-wrap'>
+            <ul className="block md:flex menu menu-horizontal px-1 text-center">
       
       {
         navItems.map(item => <li className='text-white uppercase font-semibold' key={item.path}><Link href={item.path}> {item.route}</Link></li>)
@@ -55,6 +56,7 @@ const Footer = () => {
       </li>
     </ul>
             </div>
+           </div>
             <p className='text-neutral-500 text-sm'>@2025 The News Portal. Design by Developer Soumitro Sarker</p>
            </div>
     );
